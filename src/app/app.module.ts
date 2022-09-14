@@ -1,16 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { ServicesComponent } from './services/services.component';
+import {RouterModule} from "@angular/router";
+import { RealisationsComponent } from './realisations/realisations.component';
+import { ProposComponent } from './propos/propos.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    ServicesComponent,
+    RealisationsComponent,
+    ProposComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([
+      {path: 'services', component: ServicesComponent},
+      {path: 'realisations', component: RealisationsComponent},
+      {path: 'propos', component: ProposComponent},
+      {path: 'contact', component: ContactComponent},
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
