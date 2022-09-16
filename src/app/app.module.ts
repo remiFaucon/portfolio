@@ -8,6 +8,7 @@ import {RouterModule} from "@angular/router";
 import { RealisationsComponent } from './realisations/realisations.component';
 import { ProposComponent } from './propos/propos.component';
 import { ContactComponent } from './contact/contact.component';
+import { TerminalComponent } from './terminal/terminal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ContactComponent } from './contact/contact.component';
     ServicesComponent,
     RealisationsComponent,
     ProposComponent,
-    ContactComponent
+    ContactComponent,
+    TerminalComponent
   ],
   imports: [
     BrowserModule,

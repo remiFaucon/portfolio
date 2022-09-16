@@ -1,0 +1,89 @@
+.terminalWindow{
+  height: 27.4rem;
+  width: 33rem;
+  .hidden{
+    display: none;
+  }
+  .terminalHeader{
+    display: flex;
+    justify-content: end;
+    width: 33rem;
+    height: fit-content;
+    background-color: #333D54;
+    border-radius: .2rem .2rem 0 0;
+    div{
+      height: 1rem;
+      width: 1rem;
+      margin: .2rem;
+      border-radius: .5rem;
+      &:first-of-type{
+        background-color: #FFC463;
+      }
+      &:nth-of-type(2){
+        background-color: #33AB54;
+      }
+      &:last-of-type{
+        background-color: #E30045;
+        position: relative;
+        &:hover{
+          &:before{
+            content: "";
+            position: absolute;
+            background-color: #48494D;
+            width: 12px;
+            height: 3px;
+            border-radius: 2px;
+            left: 15%;
+            top: 40%;
+            transform: rotateZ(45deg);
+          }
+          &:after{
+             content: "";
+             position: absolute;
+             background-color: #48494D;
+             width: 12px;
+             height: 3px;
+             border-radius: 2px;
+             left: 15%;
+             top: 40%;
+             transform: rotateZ(-45deg);
+           }
+        }
+      }
+    }
+  }
+  .terminal{
+    background-color: #300A24;
+    color: #E4E8E0;
+    height: 24rem;
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 0 0 .2rem .2rem;
+    h1{
+      font-size: 32px;
+      strong {
+        display: block;
+        font-size: 40px;
+      }
+    }
+    .green{
+      color: #87E033;
+    }
+    .blue{
+      color: #345D94;
+    }
+    .grey{
+      color: #8A7982;
+      font-weight: normal;
+    }
+    p{
+      font-size: 20px;
+      &:first-of-type{
+        margin-top: 0;
+      }
+      &:last-of-type{
+        font-weight: bold;
+      }
+    }
+  }
+}

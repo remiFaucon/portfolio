@@ -19,19 +19,8 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-
-
   underline(path: string): void {
-    const nav = document.querySelectorAll("app-header a")
-    nav.forEach((a) => {
-      if (a.getAttribute("routerLink") === path){
-        a.classList.add("underline")
-      }
-      else {
-        if (a.classList.contains("underline")){
-          a.classList.remove("underline")
-        }
-      }
-    })
+    document.querySelectorAll("app-header a").forEach(a => a.classList.remove("underline"))
+    document.querySelector("app-header a[routerLink='" + path + "']")?.classList.add("underline")
   }
 }

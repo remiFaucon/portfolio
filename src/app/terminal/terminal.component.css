@@ -1,0 +1,71 @@
+.terminalWindow {
+  height: 27.4rem;
+  width: 33rem; }
+  .terminalWindow .hidden {
+    display: none; }
+  .terminalWindow .terminalHeader {
+    display: flex;
+    justify-content: end;
+    width: 33rem;
+    height: fit-content;
+    background-color: #333D54;
+    border-radius: .2rem .2rem 0 0; }
+    .terminalWindow .terminalHeader div {
+      height: 1rem;
+      width: 1rem;
+      margin: .2rem;
+      border-radius: .5rem; }
+      .terminalWindow .terminalHeader div:first-of-type {
+        background-color: #FFC463; }
+      .terminalWindow .terminalHeader div:nth-of-type(2) {
+        background-color: #33AB54; }
+      .terminalWindow .terminalHeader div:last-of-type {
+        background-color: #E30045;
+        position: relative; }
+        .terminalWindow .terminalHeader div:last-of-type:hover:before {
+          content: "";
+          position: absolute;
+          background-color: #48494D;
+          width: 12px;
+          height: 3px;
+          border-radius: 2px;
+          left: 15%;
+          top: 40%;
+          transform: rotateZ(45deg); }
+        .terminalWindow .terminalHeader div:last-of-type:hover:after {
+          content: "";
+          position: absolute;
+          background-color: #48494D;
+          width: 12px;
+          height: 3px;
+          border-radius: 2px;
+          left: 15%;
+          top: 40%;
+          transform: rotateZ(-45deg); }
+  .terminalWindow .terminal {
+    background-color: #300A24;
+    color: #E4E8E0;
+    height: 24rem;
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 0 0 .2rem .2rem; }
+    .terminalWindow .terminal h1 {
+      font-size: 32px; }
+      .terminalWindow .terminal h1 strong {
+        display: block;
+        font-size: 40px; }
+    .terminalWindow .terminal .green {
+      color: #87E033; }
+    .terminalWindow .terminal .blue {
+      color: #345D94; }
+    .terminalWindow .terminal .grey {
+      color: #8A7982;
+      font-weight: normal; }
+    .terminalWindow .terminal p {
+      font-size: 20px; }
+      .terminalWindow .terminal p:first-of-type {
+        margin-top: 0; }
+      .terminalWindow .terminal p:last-of-type {
+        font-weight: bold; }
+
+/*# sourceMappingURL=terminal.component.css.map */
