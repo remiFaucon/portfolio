@@ -10,7 +10,7 @@
     width: 33rem;
     height: fit-content;
     background-color: #333D54;
-    border-radius: .2rem .2rem 0 0;
+    border-radius: .4rem .4rem 0 0;
     div{
       height: 1rem;
       width: 1rem;
@@ -58,7 +58,7 @@
     height: 24rem;
     padding: 1rem;
     font-family: 'Roboto', sans-serif;
-    border-radius: 0 0 .2rem .2rem;
+    border-radius: 0 0 .4rem .4rem;
     h1{
       font-size: 32px;
       strong {
@@ -81,9 +81,10 @@
       &:first-of-type{
         margin-top: 0;
       }
-      &:last-of-type{
-        font-weight: bold;
-      }
+    }
+    a{
+      font-weight: bold;
     }
   }
 }
+

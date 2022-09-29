@@ -9,7 +9,7 @@
     width: 33rem;
     height: fit-content;
     background-color: #333D54;
-    border-radius: .2rem .2rem 0 0; }
+    border-radius: .4rem .4rem 0 0; }
     .terminalWindow .terminalHeader div {
       height: 1rem;
       width: 1rem;
@@ -48,7 +48,7 @@
     height: 24rem;
     padding: 1rem;
     font-family: 'Roboto', sans-serif;
-    border-radius: 0 0 .2rem .2rem; }
+    border-radius: 0 0 .4rem .4rem; }
     .terminalWindow .terminal h1 {
       font-size: 32px; }
       .terminalWindow .terminal h1 strong {
@@ -65,7 +65,7 @@
       font-size: 20px; }
       .terminalWindow .terminal p:first-of-type {
         margin-top: 0; }
-      .terminalWindow .terminal p:last-of-type {
-        font-weight: bold; }
+    .terminalWindow .terminal a {
+      font-weight: bold; }
 
 /*# sourceMappingURL=terminal.component.css.map */
