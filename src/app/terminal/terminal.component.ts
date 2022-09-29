@@ -14,8 +14,11 @@ export interface character {
   encapsulation: ViewEncapsulation.None,
 })
 export class TerminalComponent implements OnInit {
-
+  terminalContent = new Map()
+  toggle: boolean = true
+  cssClass: string = "hidden"
   constructor(private router: Router) {
+    // this.terminalContent.set(1, )
   }
   ngOnInit(): void {
     (async () => {
