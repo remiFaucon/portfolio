@@ -1,5 +1,5 @@
 header{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   font-size: 20px;
   display: flex;
   justify-content: space-between;
@@ -7,8 +7,11 @@ header{
   margin: 1rem auto;
   h2{
     font-weight: normal;
+    line-height: 76px;
+    font-size: 2rem;
     text-transform: uppercase;
     color: #300A24;
+    margin: 0;
     span{
       margin: 0 2rem;
       font-weight: bold;
@@ -50,48 +53,25 @@ header{
     text-decoration: none;
     height: fit-content;
   }
+  #iconMenu{
+    display: none;
+  }
 }
 @media (max-width: 1180px) {
   header {
+    position: relative;
     nav{
       display: none;
     }
     > a {
       display: none;
     }
-  }
-  .burgerMenu {
-    display: flex;
-    margin: 2rem;
-    div {
-      top: 0;
-      right: 0;
-      height: .5rem;
-      width: 2.5rem;
-      border-radius: .25rem;
-      background-color: #8154A8;
-      margin: auto;
-      position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        bottom: .8rem;
-        right: 0;
-        background-color: #8154A8;
-        width: 2.5rem;
-        height: .5rem;
-        border-radius: .25rem;
-      }
-      &:after {
-       content: "";
-       position: absolute;
-       top: .8rem;
-       right: 0;
-       background-color: #8154A8;
-       width: 2.5rem;
-       height: .5rem;
-       border-radius: .25rem;
-      }
+    #iconMenu {
+      display: block;
+      position: absolute;
+      right: 4rem;
+      top: 50%;
+      transform: translateY(-50%) scale(2);
     }
   }
 }

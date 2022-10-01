@@ -23,7 +23,6 @@ export class TerminalComponent implements OnInit {
   ngOnInit(): void {
     (async () => {
       this.showTerminalContent().then(() => {
-        console.log("debut")
         let toggleElement = document.querySelector("app-terminal .terminal div:last-of-type a span:last-of-type")!;
         setInterval(() => {
           this.toggle = !this.toggle
@@ -144,7 +143,6 @@ export class TerminalComponent implements OnInit {
         0,
         1000
       )
-    console.log("fin")
     return
   }
 }
