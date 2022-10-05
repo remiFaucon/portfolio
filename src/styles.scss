@@ -11,4 +11,11 @@
 body{
   margin: 0;
   padding: 0;
+  app-root{
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+  }
 }

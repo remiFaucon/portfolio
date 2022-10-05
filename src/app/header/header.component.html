@@ -19,7 +19,11 @@
     </menu>
   </nav>
   <a routerLink="/contact">me&nbsp;contacter</a>
-  <button mat-icon-button color="primary" [matMenuTriggerFor]="menu" aria-label="Menu" id="iconMenu">
+  <button mat-icon-button
+           color="primary"
+          [matMenuTriggerFor]="menu"
+          aria-label="Menu"
+          id="iconMenu">
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
