@@ -59,13 +59,6 @@
     padding: 1rem;
     font-family: 'Roboto', sans-serif;
     border-radius: 0 0 .4rem .4rem;
-    h1{
-      font-size: 32px;
-      strong {
-        display: block;
-        font-size: 40px;
-      }
-    }
     .green{
       color: #87E033;
     }
@@ -78,12 +71,28 @@
     }
     p{
       font-size: 20px;
-      &:first-of-type{
-        margin-top: 0;
+      .input:not(.hiddenInput){
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: -1rem;
+          height: 1.3rem;
+          width: .5rem;
+          background-color: #E4E8E0;
+        }
       }
     }
-    a{
-      font-weight: bold;
+    .commandsList{
+      display: flex;
+      .commands{
+        margin-left: 2rem;
+      }
+      .commandsDescription{
+        margin-left: 2rem;
+        color: #95868E;
+      }
     }
   }
 }

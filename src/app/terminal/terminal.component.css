@@ -49,11 +49,6 @@
     padding: 1rem;
     font-family: 'Roboto', sans-serif;
     border-radius: 0 0 .4rem .4rem; }
-    .terminalWindow .terminal h1 {
-      font-size: 32px; }
-      .terminalWindow .terminal h1 strong {
-        display: block;
-        font-size: 40px; }
     .terminalWindow .terminal .green {
       color: #87E033; }
     .terminalWindow .terminal .blue {
@@ -63,9 +58,22 @@
       font-weight: normal; }
     .terminalWindow .terminal p {
       font-size: 20px; }
-      .terminalWindow .terminal p:first-of-type {
-        margin-top: 0; }
-    .terminalWindow .terminal a {
-      font-weight: bold; }
+      .terminalWindow .terminal p .input:not(.hiddenInput) {
+        position: relative; }
+        .terminalWindow .terminal p .input:not(.hiddenInput):after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: -1rem;
+          height: 1.3rem;
+          width: .5rem;
+          background-color: #E4E8E0; }
+    .terminalWindow .terminal .commandsList {
+      display: flex; }
+      .terminalWindow .terminal .commandsList .commands {
+        margin-left: 2rem; }
+      .terminalWindow .terminal .commandsList .commandsDescription {
+        margin-left: 2rem;
+        color: #95868E; }
 
 /*# sourceMappingURL=terminal.component.css.map */
