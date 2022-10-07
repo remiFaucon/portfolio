@@ -5,7 +5,8 @@
   width: 75vw;
   margin: auto; }
   .page .textContent {
-    max-width: 30rem;
+    width: 30rem;
+    margin-right: 5rem;
     color: #300A24; }
     .page .textContent h1 {
       font-size: 60px;
@@ -18,5 +19,12 @@
     .page .textContent p {
       font-size: 20px;
       letter-spacing: 1px; }
+
+@media (max-width: 1150px) {
+  .page {
+    flex-direction: column; }
+    .page .textContent {
+      width: 60vw;
+      margin: 0 auto; } }
 
 /*# sourceMappingURL=home.component.css.map */

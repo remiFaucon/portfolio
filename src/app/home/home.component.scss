@@ -5,7 +5,8 @@
   width: 75vw;
   margin: auto;
   .textContent {
-    max-width: 30rem;
+    width: 30rem;
+    margin-right: 5rem;
     color: #300A24;
     h1 {
       font-size: 60px;
@@ -20,6 +21,15 @@
     p {
       font-size: 20px;
       letter-spacing: 1px;
+    }
+  }
+}
+@media (max-width: 1150px){
+  .page{
+    flex-direction: column;
+    .textContent{
+      width: 60vw;
+      margin: 0 auto;
     }
   }
 }

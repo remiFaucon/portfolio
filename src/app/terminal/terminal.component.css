@@ -1,12 +1,19 @@
 .terminalWindow {
-  height: 27.4rem;
-  width: 33rem; }
+  margin: 0 auto;
+  max-height: 27.4rem;
+  max-width: 33rem;
+  height: 30vw;
+  width: 40vw;
+  min-height: 15rem;
+  min-width: 28rem; }
   .terminalWindow .hidden {
     display: none; }
   .terminalWindow .terminalHeader {
     display: flex;
     justify-content: end;
-    width: 33rem;
+    max-width: 33rem;
+    width: 40vw;
+    min-width: 28rem;
     height: fit-content;
     background-color: #333D54;
     border-radius: .4rem .4rem 0 0; }
@@ -45,7 +52,9 @@
   .terminalWindow .terminal {
     background-color: #300A24;
     color: #E4E8E0;
-    height: 24rem;
+    max-height: 24rem;
+    height: calc(30vw - 1rem);
+    min-height: 15rem;
     padding: 1rem;
     font-family: 'Roboto', sans-serif;
     border-radius: 0 0 .4rem .4rem; }
