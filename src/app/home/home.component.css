@@ -1,9 +1,12 @@
 .page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: space-between;
   max-width: 75rem;
-  width: 75vw;
-  margin: auto; }
+  width: 75vw; }
   .page .textContent {
     width: 30rem;
     margin-right: 5rem;

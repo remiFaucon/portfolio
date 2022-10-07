@@ -1,0 +1,28 @@
+:host{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  max-width: 1440px;
+  margin: 0 auto 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  .reseau{
+    display: flex;
+    a{
+      display: flex;
+      background-color: #8154A8;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 1rem;
+      margin: 1rem;
+      svg{
+        margin: auto;
+      }
+    }
+  }
+  p{
+    width: 10rem;
+    margin: auto 0;
+  }
+}
