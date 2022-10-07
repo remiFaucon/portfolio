@@ -24,7 +24,9 @@ export interface character {
 })
 export class TerminalComponent implements OnInit {
   terminalContent = new Map()
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+  ) {}
   ngOnInit(): void {
     (async () => {
       await this.showTerminalContent()
@@ -111,7 +113,7 @@ export class TerminalComponent implements OnInit {
 
   private async showTerminalContent():Promise<void> {
     await this.addLine("<p><span class=\"green\">user@machine:</span><span class=\"blue\">~</span>$ </p>", 1)
-    await this.addLine("home", 1, 200, 4, 1000)
+    await this.addLine("portfolio --config", 1, 150, 4, 1000)
     await this.addLine(
       "<p>Commands:</p>" +
       "<div class='commandsList'>" +
@@ -146,6 +148,9 @@ export class TerminalComponent implements OnInit {
       elements.forEach((element, index) => {
         setTimeout(() => element.remove(), 300 * index);
       })
+      setTimeout(() => {
+        resolve()
+      }, 300 * elements.length)
     })
     return await promise
   }
