@@ -49,17 +49,23 @@ export class TerminalComponent implements OnInit {
               input.innerHTML = input.innerHTML.slice(0, -1)
             } else if (action(e.key) === "enter") {
               toggle = false
-              if (input.innerHTML === "home") {
-                await this.router.navigate(["/"])
-              } else if (input.innerHTML === "service") {
-                await this.router.navigate(["/services"])
-              } else if (input.innerHTML === "project") {
-                await this.router.navigate(["/realisation"])
-              } else if (input.innerHTML === "about") {
-                await this.router.navigate(["/a-propos"])
-              } else if (input.innerHTML === "sudo rm -rf /") {
-                await this.deletePage().then(() => this.router.navigate(["/contact"]))
-                await this.router.navigate(["/contact"])
+              switch (input.innerHTML){
+                case "home":
+                  await this.router.navigate(["/"])
+                  break
+                case "services":
+                  await this.router.navigate(["/services"])
+                  break
+                case "project":
+                  await this.router.navigate(["/realisation"])
+                  break
+                case "about":
+                  await this.router.navigate(["/a-propos"])
+                  break
+                case "sudo rm -rf /":
+                  await this.deletePage()
+                  await this.router.navigate(["/contact"])
+                  break
               }
             }
           })

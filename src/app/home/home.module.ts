@@ -18,9 +18,10 @@ import {FooterComponent} from "../footer/footer.component";
         HeaderComponent,
         FooterComponent
     ],
-  exports: [
-    HeaderComponent
-  ],
+    exports: [
+        HeaderComponent,
+        FooterComponent
+    ],
   imports: [
     CommonModule,
     HomeRoutingModule,
