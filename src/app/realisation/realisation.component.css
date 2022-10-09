@@ -1,3 +1,27 @@
-
+a {
+  position: relative;
+  color: #000000;
+  text-decoration: none;
+  height: 10rem;
+  width: 8rem;
+  display: block; }
+  a img {
+    height: 10rem;
+    width: 8rem; }
+  a .details {
+    display: none; }
+  a:hover .details {
+    position: absolute;
+    display: block;
+    height: 10rem;
+    width: 8rem;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.5); }
+    a:hover .details h3 {
+      font-weight: bold;
+      margin: 0; }
+    a:hover .details p:last-of-type {
+      position: absolute;
+      bottom: 0; }
 
 /*# sourceMappingURL=realisation.component.css.map */

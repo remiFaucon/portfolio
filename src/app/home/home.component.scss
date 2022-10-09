@@ -30,9 +30,19 @@
 @media (max-width: 1150px){
   .page{
     flex-direction: column;
+    left: 50%;
+    top: 6rem;
+    transform: translateX(-50%);
     .textContent{
-      width: 60vw;
-      margin: 0 auto;
+      width: 75vw;
+      margin: 0;
+      h1{
+        font-size: 5vw;
+        line-height: 4vw;
+        span{
+          font-size: 4vw;
+        }
+      }
     }
   }
 }

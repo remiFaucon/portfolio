@@ -19,7 +19,18 @@
       :host .reseau a svg {
         margin: auto; }
   :host p {
-    width: 10rem;
+    max-width: 10rem;
+    width: 10vw;
     margin: auto 0; }
+
+@media (max-width: 850px) {
+  :host .reseau {
+    flex-direction: column; }
+  :host p {
+    position: absolute;
+    bottom: 2rem;
+    right: -3rem;
+    transform: rotate(90deg);
+    width: 20rem; } }
 
 /*# sourceMappingURL=footer.component.css.map */

@@ -11,9 +11,7 @@
   .terminalWindow .terminalHeader {
     display: flex;
     justify-content: end;
-    max-width: 33rem;
-    width: 40vw;
-    min-width: 28rem;
+    width: 100%;
     height: fit-content;
     background-color: #333D54;
     border-radius: .4rem .4rem 0 0; }
@@ -53,7 +51,7 @@
     background-color: #300A24;
     color: #E4E8E0;
     max-height: 24rem;
-    height: calc(30vw - 1rem);
+    height: calc(30vw - 2rem);
     min-height: 15rem;
     padding: 1rem;
     font-family: 'Roboto', sans-serif;
@@ -73,9 +71,9 @@
           content: "";
           position: absolute;
           top: 0;
-          right: -1rem;
-          height: 1.3rem;
-          width: .5rem;
+          right: -0.8em;
+          height: 1.3em;
+          width: .5em;
           background-color: #E4E8E0; }
     .terminalWindow .terminal .commandsList {
       display: flex; }
@@ -84,5 +82,19 @@
       .terminalWindow .terminal .commandsList .commandsDescription {
         margin-left: 2rem;
         color: #95868E; }
+
+@media (max-width: 580px) {
+  .terminalWindow {
+    min-width: 0;
+    width: 60vw;
+    min-height: 13rem;
+    height: 25vw; }
+    .terminalWindow .terminal {
+      min-height: 10rem; }
+      .terminalWindow .terminal p {
+        font-size: 2vw;
+        line-height: 1.4vw; }
+      .terminalWindow .terminal .commandsList .commands, .terminalWindow .terminal .commandsList .commandsDescription {
+        margin-left: 1rem; } }
 
 /*# sourceMappingURL=terminal.component.css.map */

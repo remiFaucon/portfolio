@@ -25,9 +25,17 @@
 
 @media (max-width: 1150px) {
   .page {
-    flex-direction: column; }
+    flex-direction: column;
+    left: 50%;
+    top: 6rem;
+    transform: translateX(-50%); }
     .page .textContent {
-      width: 60vw;
-      margin: 0 auto; } }
+      width: 75vw;
+      margin: 0; }
+      .page .textContent h1 {
+        font-size: 5vw;
+        line-height: 4vw; }
+        .page .textContent h1 span {
+          font-size: 4vw; } }
 
 /*# sourceMappingURL=home.component.css.map */

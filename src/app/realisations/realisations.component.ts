@@ -15,9 +15,27 @@ export type realisation = {
 })
 export class RealisationsComponent implements OnInit {
   realisations: realisation[] = [
-    {title: "title", date: new Date("01-01-2001"), description: "lorem ipsum", image: "/assets/panda.jpg", link: "google.com"},
-    {title: "title", date: new Date("01-01-2001"), description: "lorem ipsum", image: "/assets/panda.jpg", link: "google.com"},
-    {title: "title", date: new Date("01-01-2001"), description: "lorem ipsum", image: "/assets/panda.jpg", link: "google.com"}
+    {
+      title: "title",
+      date: new Date("01-01-2001"),
+      description: "lorem ipsum",
+      image: "/assets/panda.jpg",
+      link: "google.com"
+    },
+    {
+      title: "title",
+      date: new Date("01-01-2001"),
+      description: "lorem ipsumlorem ipsumlorem ipsu",
+      image: "/assets/panda.jpg",
+      link: "google.com"
+    },
+    {
+      title: "title",
+      date: new Date("01-01-2001"),
+      description: "lorem ipsum",
+      image: "/assets/panda.jpg",
+      link: "google.com"
+    }
   ]
   constructor() { }
 

@@ -24,9 +24,7 @@ export interface character {
 })
 export class TerminalComponent implements OnInit {
   terminalContent = new Map()
-  constructor(
-    private router: Router,
-  ) {}
+  constructor(private router: Router) {}
   ngOnInit(): void {
     (async () => {
       await this.showTerminalContent()
@@ -53,7 +51,7 @@ export class TerminalComponent implements OnInit {
                 case "home":
                   await this.router.navigate(["/"])
                   break
-                case "services":
+                case "service":
                   await this.router.navigate(["/services"])
                   break
                 case "project":
