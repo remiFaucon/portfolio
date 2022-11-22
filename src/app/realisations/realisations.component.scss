@@ -1,0 +1,53 @@
+:host{
+  .page{
+    position: relative;
+    max-width: 80rem;
+    height: 80vh;
+    margin: 0 auto;
+    .realisations{
+      position: absolute;
+      top: 10%;
+      left: 0;
+      margin-left: 2rem;
+      z-index: 0;
+      app-realisation{
+        transition: .7s;
+        &:nth-of-type(1){
+          top: 0;
+          left: 0;
+        }
+        &:nth-of-type(2){
+          top: 2rem;
+          left: 2rem;
+        }
+        &:nth-of-type(3){
+          transition: 1s;
+          top: 4rem;
+          left: 4rem;
+        }
+        &:hover{
+          transform: translateX(10rem) scale(1.5);
+        }
+      }
+      &:hover{
+        app-realisation:not(app-realisation:hover){
+          transition: .7s;
+          opacity: 0;
+        }
+      }
+    }
+    #details{
+      width: 30%;
+      position: absolute;
+      left: 50rem;
+      top: 25%;
+      z-index: -1;
+    }
+    app-terminal{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+  }
+}

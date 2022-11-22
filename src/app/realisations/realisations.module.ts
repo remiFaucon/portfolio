@@ -6,6 +6,7 @@ import { RealisationsComponent } from './realisations.component';
 import { RealisationComponent } from '../realisation/realisation.component';
 import {FormsModule} from "@angular/forms";
 import {HomeModule} from "../home/home.module";
+import {DockModule} from "primeng/dock";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {HomeModule} from "../home/home.module";
         CommonModule,
         RealisationsRoutingModule,
         FormsModule,
-        HomeModule
+        HomeModule,
+        DockModule
     ]
 })
 export class RealisationsModule { }

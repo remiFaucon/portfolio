@@ -38,9 +38,9 @@
             width: 12px;
             height: 3px;
             border-radius: 2px;
-            left: 15%;
-            top: 40%;
-            transform: rotateZ(45deg);
+            left: 50%;
+            top: 50%;
+            transform: rotateZ(45deg) translate(-40%, 100%);
           }
           &:after{
              content: "";
@@ -49,9 +49,9 @@
              width: 12px;
              height: 3px;
              border-radius: 2px;
-             left: 15%;
-             top: 40%;
-             transform: rotateZ(-45deg);
+             left: 50%;
+             top: 50%;
+             transform: rotateZ(-45deg) translate(-25%, -150%);
            }
         }
       }
@@ -78,6 +78,7 @@
     }
     p{
       font-size: 20px;
+      margin: 0 0 .5rem 0;
       .input:not(.hiddenInput){
         position: relative;
         &:after {
@@ -109,14 +110,14 @@
     width: 60vw;
     min-height: 13rem;
     height: 25vw;
-    .terminal{
+    .terminal {
       min-height: 10rem;
-      p{
+      p {
         font-size: 2vw;
         line-height: 1.4vw;
       }
-      .commandsList{
-        .commands, .commandsDescription{
+      .commandsList {
+        .commands, .commandsDescription {
           margin-left: 1rem;
         }
       }

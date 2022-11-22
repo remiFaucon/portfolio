@@ -1,33 +1,70 @@
-a {
-  position: relative;
-  color: #000000;
-  text-decoration: none;
-  height: 10rem;
-  width: 8rem;
+:host{
+  position:absolute;
   display: block;
-  img {
-    height: 10rem;
-    width: 8rem;
-  }
-  .details {
-    display: none;
-  }
-  &:hover {
-    .details {
-      position: absolute;
-      display: block;
-      height: 10rem;
-      width: 8rem;
-      top: 0;
-      background-color: rgba(255, 255, 255, 0.5);
-      h3{
-        font-weight: bold;
-        margin: 0;
+  height: 30rem;
+  width: 40rem;
+  .realisationHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    background-color: #333D54;
+    border-radius: .4rem .4rem 0 0;
+    h3{
+      margin: 0 0 0 1rem;
+      color: #a2a8cb;
+      line-height: 1.5rem;
+    }
+    .control{
+      display: flex;
+      div{
+        height: 1rem;
+        width: 1rem;
+        margin: .2rem;
+        border-radius: .5rem;
+        &:first-of-type{
+          background-color: #FFC463;
+        }
+        &:nth-of-type(2){
+          background-color: #33AB54;
+        }
+        &:last-of-type{
+          background-color: #E30045;
+          position: relative;
+          &:hover{
+            &:before{
+              content: "";
+              position: absolute;
+              background-color: #48494D;
+              width: 12px;
+              height: 3px;
+              border-radius: 2px;
+              left: 50%;
+              top: 50%;
+              transform: rotateZ(45deg) translate(-40%, 100%);
+            }
+            &:after{
+              content: "";
+              position: absolute;
+              background-color: #48494D;
+              width: 12px;
+              height: 3px;
+              border-radius: 2px;
+              left: 50%;
+              top: 50%;
+              transform: rotateZ(-45deg) translate(-25%, -150%);
+            }
+          }
+        }
       }
-      p:last-of-type {
-        position: absolute;
-        bottom: 0;
-      }
+    }
+  }
+  .window {
+    height: 28rem;
+    width: 100%;
+    img{
+      width: 100%;
+      height: 100%;
     }
   }
 }

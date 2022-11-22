@@ -1,0 +1,15 @@
+:host{
+  ::ng-deep .p-chip.custom-chip {
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+  }
+  .field{
+    small{
+      display: block;
+    }
+    ::ng-deep .p-inputtext{
+      padding: 1rem 3rem;
+    }
+  }
+}
+

@@ -1,2 +1,48 @@
 <app-header></app-header>
-<p>contact works!</p>
+
+<!--<p-panelMenu [model]="menuBizarre" [style]="{'width':'300px'}"></p-panelMenu>-->
+
+<div class="field">
+  <span class="p-input-icon-left">
+    <i class="pi pi-envelope"></i>
+    <input #inputEmail
+           type="email"
+           id="inputtext"
+           pInputText
+           class="ng-dirty"
+           placeholder="adresse mail"
+           [(ngModel)]="emailAddress"
+           (focusout)="validate(inputEmail)">
+  </span>
+  <small *ngIf="emailError" class="p-error block">email is not available.</small>
+</div>
+<div class="field">
+  <span class="p-input-icon-left">
+    <i class="pi pi-phone"></i>
+    <p-inputMask mask="09-99-99-99-99"
+                 placeholder="telephone (facultatif)"
+                 [(ngModel)]="phoneNumber">
+    </p-inputMask>
+  </span>
+</div>
+<div class="object">
+  <p-chip #object
+          *ngFor="let obj of objectList"
+          label="{{obj}}"
+          (click)="selectObject(object)">
+  </p-chip>
+</div>
+<p-editor [(ngModel)]="emailBody" [style]="{'height':'320px'}">
+  <ng-template pTemplate="header">
+        <span class="ql-format-group">
+            <span title="Bold" class="ql-format-button ql-bold"></span>
+            <span class="ql-format-separator"></span>
+            <span title="Italic" class="ql-format-button ql-italic"></span>
+            <span class="ql-format-separator"></span>
+            <span title="Underline" class="ql-format-button ql-underline"></span>
+            <span class="ql-format-separator"></span>
+            <span title="Strikethrough" class="ql-format-button ql-strike"></span>
+        </span>
+  </ng-template>
+</p-editor>
+<app-footer></app-footer>

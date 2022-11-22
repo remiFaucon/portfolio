@@ -1,3 +1,20 @@
 <app-header></app-header>
-<app-realisation *ngFor="let realisation of realisations" [realisation]="realisation"></app-realisation>
-<app-footer></app-footer>
+<div class="page">
+  <div class="realisations">
+    <app-realisation *ngFor="let realisation of realisations"
+                     [realisation]="realisation"
+                     [attr.data-id]="realisation.id" >
+    </app-realisation>
+  </div>
+  <div id="details">
+    <h2></h2>
+    <p></p>
+    <p></p>
+  </div>
+  <app-terminal *ngIf="terminal"></app-terminal>
+  <p-dock [model]="dockItems" position="bottom">
+    <ng-template pTemplate="item" let-item>
+      <img [attr.data-id]="item.id" [src]="item.icon" [alt]="item.label" width="100%">
+    </ng-template>
+  </p-dock>
+</div>

@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {Chip} from "primeng/chip";
+
+// interface bizarre {
+//   designation: string;
+//   person: string[];
+// }
 
 @Component({
   selector: 'app-contact',
@@ -6,10 +12,49 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  emailError: boolean = false;
+
+  emailAddress: string = "";
+  emailObject: string = "";
+  emailBody: string = "";
+  objectList: string[] = [
+    "obj 1",
+    "obj 2",
+    "obj 3",
+  ];
+  phoneNumber: string = "";
+
+
 
   constructor() { }
 
   ngOnInit(): void {
+    // this.mecBizarre.forEach((item) => {
+    //   this.menuBizarre.push({
+    //     label: item.designation,
+    //     items: []
+    //   })
+    //   item.person.forEach((person) => {
+    //     this.menuBizarre[this.menuBizarre.length-1].items.push({label: person});
+    //   })
+    // })
+    // console.log(this.mecBizarre)
   }
 
+  validate(input: HTMLInputElement) {
+    if(this.emailAddress.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+      input.classList.remove("ng-invalid")
+      this.emailError = false;
+    }
+    else {
+      input.classList.add("ng-invalid")
+      this.emailError = true;
+    }
+  }
+
+  selectObject(object: Chip) {
+    document.querySelector("p-chip .custom-chip")?.classList.remove("custom-chip")
+    object.styleClass = "mr-2 custom-chip"
+    this.emailObject = object.label
+  }
 }

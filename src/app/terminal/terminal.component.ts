@@ -71,7 +71,11 @@ export class TerminalComponent implements OnInit {
     }) ()
 
     function action(key: string): string|void {
-      let letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "-", "/", " "]
+      let letter = [
+        "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+        "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
+        "u", "v", "w", "x", "y", "z", "-", "/", " "
+      ]
       if(letter.includes(key)) return "inner"
       else if (key === "Backspace") return "outer"
       else if (key === "Enter") return "enter"

@@ -13,7 +13,7 @@ export class RealisationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  dateFormat(date: Date): string {
+  static dateFormat(date: Date): string {
     const day = date.getDay() < 10 ? "0" + date.getDay() : date.getDay()
     const month = date.getMonth() < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1
     return day + "/" + month + "/" + date.getFullYear()

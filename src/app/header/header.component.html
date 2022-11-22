@@ -19,38 +19,51 @@
     </menu>
   </nav>
   <a routerLink="/contact">me&nbsp;contacter</a>
-  <button mat-icon-button
-           color="primary"
-          [matMenuTriggerFor]="menu"
-          aria-label="Menu"
-          id="iconMenu">
-    <mat-icon>menu</mat-icon>
+  <button type="button"
+          id="iconMenu"
+          pButton icon="{{icon}}"
+          (click)="menu.toggle($event)">
   </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item
-            routerLink="/">
-      <mat-icon>home</mat-icon>
-      <span>Acceuil</span>
-    </button>
-    <button mat-menu-item
-            routerLink="/services">
-      <mat-icon>room_service</mat-icon>
-      <span>Services</span>
-    </button>
-    <button mat-menu-item
-            routerLink="/realisations">
-      <mat-icon>code</mat-icon>
-      <span>Réalisations</span>
-    </button>
-    <button mat-menu-item
-            routerLink="/a-propos">
-      <mat-icon>account_box</mat-icon>
-      <span>A propos</span>
-    </button>
-    <button mat-menu-item
-            routerLink="/contact">
-      <mat-icon>mail_outline</mat-icon>
-      <span>Contact</span>
-    </button>
-  </mat-menu>
+  <p-menu #menu
+          [showTransitionOptions]="'100ms'"
+          [hideTransitionOptions]="'10ms'"
+          [popup]="true"
+          [model]="items"
+          (onShow)="iconMenu()"
+          (onHide)="iconMenu()">
+  </p-menu>
+<!--  <button mat-icon-button-->
+<!--           color="primary"-->
+<!--          [matMenuTriggerFor]="menu"-->
+<!--          aria-label="Menu"-->
+<!--          id="iconMenu">-->
+<!--    <mat-icon>menu</mat-icon>-->
+<!--  </button>-->
+<!--  <mat-menu #menu="matMenu">-->
+<!--    <button mat-menu-item-->
+<!--            routerLink="/">-->
+<!--      <mat-icon>home</mat-icon>-->
+<!--      <span>Acceuil</span>-->
+<!--    </button>-->
+<!--    <button mat-menu-item-->
+<!--            routerLink="/services">-->
+<!--      <mat-icon>room_service</mat-icon>-->
+<!--      <span>Services</span>-->
+<!--    </button>-->
+<!--    <button mat-menu-item-->
+<!--            routerLink="/realisations">-->
+<!--      <mat-icon>code</mat-icon>-->
+<!--      <span>Réalisations</span>-->
+<!--    </button>-->
+<!--    <button mat-menu-item-->
+<!--            routerLink="/a-propos">-->
+<!--      <mat-icon>account_box</mat-icon>-->
+<!--      <span>A propos</span>-->
+<!--    </button>-->
+<!--    <button mat-menu-item-->
+<!--            routerLink="/contact">-->
+<!--      <mat-icon>mail_outline</mat-icon>-->
+<!--      <span>Contact</span>-->
+<!--    </button>-->
+<!--  </mat-menu>-->
 </header>

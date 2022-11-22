@@ -34,9 +34,9 @@
           width: 12px;
           height: 3px;
           border-radius: 2px;
-          left: 15%;
-          top: 40%;
-          transform: rotateZ(45deg); }
+          left: 50%;
+          top: 50%;
+          transform: rotateZ(45deg) translate(-40%, 100%); }
         .terminalWindow .terminalHeader div:last-of-type:hover:after {
           content: "";
           position: absolute;
@@ -44,9 +44,9 @@
           width: 12px;
           height: 3px;
           border-radius: 2px;
-          left: 15%;
-          top: 40%;
-          transform: rotateZ(-45deg); }
+          left: 50%;
+          top: 50%;
+          transform: rotateZ(-45deg) translate(-25%, -150%); }
   .terminalWindow .terminal {
     background-color: #300A24;
     color: #E4E8E0;
@@ -64,7 +64,8 @@
       color: #8A7982;
       font-weight: normal; }
     .terminalWindow .terminal p {
-      font-size: 20px; }
+      font-size: 20px;
+      margin: 0 0 .5rem 0; }
       .terminalWindow .terminal p .input:not(.hiddenInput) {
         position: relative; }
         .terminalWindow .terminal p .input:not(.hiddenInput):after {
