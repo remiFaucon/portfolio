@@ -34,15 +34,20 @@
 </div>
 <p-editor [(ngModel)]="emailBody" [style]="{'height':'320px'}">
   <ng-template pTemplate="header">
-        <span class="ql-format-group">
-            <span title="Bold" class="ql-format-button ql-bold"></span>
-            <span class="ql-format-separator"></span>
-            <span title="Italic" class="ql-format-button ql-italic"></span>
-            <span class="ql-format-separator"></span>
-            <span title="Underline" class="ql-format-button ql-underline"></span>
-            <span class="ql-format-separator"></span>
-            <span title="Strikethrough" class="ql-format-button ql-strike"></span>
+      <span class="ql-format-group">
+        <span title="Bold">
+          <button class="ql-bold"></button>
         </span>
+        <span title="Italic">
+          <button class="ql-italic"></button>
+        </span>
+        <span title="Underline">
+          <button class="ql-underline"></button>
+        </span>
+        <span title="Strikethrough">
+          <button class="ql-strike"></button>
+        </span>
+      </span>
   </ng-template>
 </p-editor>
 <app-footer></app-footer>

@@ -11,7 +11,7 @@ import {Chip} from "primeng/chip";
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
   emailError: boolean = false;
 
   emailAddress: string = "";
@@ -24,22 +24,7 @@ export class ContactComponent implements OnInit {
   ];
   phoneNumber: string = "";
 
-
-
   constructor() { }
-
-  ngOnInit(): void {
-    // this.mecBizarre.forEach((item) => {
-    //   this.menuBizarre.push({
-    //     label: item.designation,
-    //     items: []
-    //   })
-    //   item.person.forEach((person) => {
-    //     this.menuBizarre[this.menuBizarre.length-1].items.push({label: person});
-    //   })
-    // })
-    // console.log(this.mecBizarre)
-  }
 
   validate(input: HTMLInputElement) {
     if(this.emailAddress.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {

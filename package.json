@@ -26,6 +26,7 @@
     "@angular/router": "^14.2.0",
     "@mediapipe/holistic": "^0.5.1635989137",
     "@nguniversal/express-engine": "^14.2.0",
+    "aws-serverless-express": "^3.4.0",
     "express": "^4.15.2",
     "primeicons": "^6.0.1",
     "primeng": "^14.1.2",
@@ -50,6 +51,9 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "serverless": "^3.25.0",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-offline": "^11.5.0",
     "typescript": "~4.7.2"
   }
 }
