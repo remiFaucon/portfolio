@@ -10,22 +10,30 @@ import {InputTextModule} from "primeng/inputtext";
 import {ChipModule} from "primeng/chip";
 import {PanelMenuModule} from "primeng/panelmenu";
 import {InputMaskModule} from "primeng/inputmask";
+import {ChatComponent} from "../chat/chat.component";
+import {MessageModule} from "primeng/message";
+import {ButtonModule} from "primeng/button";
+import {RippleModule} from "primeng/ripple";
 
 
 @NgModule({
   declarations: [
-    ContactComponent
+    ContactComponent,
+    ChatComponent
   ],
-    imports: [
-        CommonModule,
-        ContactRoutingModule,
-        HomeModule,
-        EditorModule,
-        FormsModule,
-        InputTextModule,
-        ChipModule,
-        PanelMenuModule,
-        InputMaskModule
-    ]
+  imports: [
+    CommonModule,
+    ContactRoutingModule,
+    HomeModule,
+    EditorModule,
+    FormsModule,
+    InputTextModule,
+    ChipModule,
+    PanelMenuModule,
+    InputMaskModule,
+    MessageModule,
+    ButtonModule,
+    RippleModule
+  ]
 })
 export class ContactModule { }

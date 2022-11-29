@@ -1,0 +1,32 @@
+:host {
+  position: absolute;
+  bottom: 10rem;
+  right: 5rem; }
+  :host #chat {
+    height: 30rem;
+    width: 20rem;
+    border-radius: .5rem;
+    border: 2px solid lightgrey;
+    background-color: white; }
+    :host #chat #content {
+      height: 28rem;
+      overflow: scroll; }
+    :host #chat #input {
+      display: flex;
+      justify-content: center; }
+      :host #chat #input i {
+        margin: .1rem 0 .1rem .3rem; }
+  :host #bubble-chat {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+    margin: 0 0 0 auto;
+    background-color: #8154A8; }
+    :host #bubble-chat i {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      transform: translate(40%, -50%); }
+
+/*# sourceMappingURL=chat.component.css.map */

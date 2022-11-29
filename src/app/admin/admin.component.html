@@ -1,0 +1,19 @@
+<p-accordion>
+  <p-accordionTab *ngFor="let user of users" header="{{user.name}}" (click)="setThisUser(user.name)">
+    <div id="chat">
+      <div id="content">
+        <div *ngFor="let message of user.messages">
+          <p class="{{message.class}}">{{message.text}}</p>
+        </div>
+      </div>
+      <div class="col-12 md:col-4" id="input">
+        <div class="p-inputgroup">
+          <input type="text" pInputText placeholder="Keyword" [(ngModel)]="messageInput">
+          <button type="button" pButton pRipple icon="pi pi-arrow-circle-right" styleClass="p-button-warn" (submit)="send()"></button>
+        </div>
+      </div>
+    </div>
+  </p-accordionTab>
+</p-accordion>
+
+<p>sfgvsdfgv</p>

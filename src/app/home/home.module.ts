@@ -8,15 +8,17 @@ import {HeaderComponent} from "../header/header.component";
 import {FooterComponent} from "../footer/footer.component";
 import {MenuModule} from "primeng/menu";
 import {ButtonModule} from "primeng/button";
+import {FormsModule} from "@angular/forms";
+import {MessageModule} from "primeng/message";
 
 
 @NgModule({
-    declarations: [
-        HomeComponent,
-        TerminalComponent,
-        HeaderComponent,
-        FooterComponent
-    ],
+  declarations: [
+    HomeComponent,
+    TerminalComponent,
+    HeaderComponent,
+    FooterComponent,
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,
@@ -27,6 +29,8 @@ import {ButtonModule} from "primeng/button";
     HomeRoutingModule,
     MenuModule,
     ButtonModule,
+    FormsModule,
+    MessageModule,
   ]
 })
 export class HomeModule { }

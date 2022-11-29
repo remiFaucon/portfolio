@@ -1,0 +1,17 @@
+<div *ngIf="hidden" id="chat">
+  <div id="content">
+    <div *ngFor="let message of messages">
+      <p-message *ngIf="message.severity" severity="{{message.severity}}" text="{{message.text}}"></p-message>
+      <p *ngIf="!message.severity" class="{{message.class}}">{{message.text}}</p>
+    </div>
+  </div>
+  <div class="col-12 md:col-4" id="input">
+    <div class="p-inputgroup">
+      <input type="text" pInputText placeholder="Keyword" [(ngModel)]="messageInput">
+      <button type="button" pButton pRipple icon="pi pi-arrow-circle-right" styleClass="p-button-warn" (click)="send()"></button>
+    </div>
+  </div>
+</div>
+<div (click)="hidden=!hidden" id="bubble-chat">
+  <i class="pi pi-comment"></i>
+</div>

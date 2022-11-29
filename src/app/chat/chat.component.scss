@@ -1,0 +1,37 @@
+:host {
+  position: absolute;
+  bottom: 10rem;
+  right: 5rem;
+  #chat{
+    height: 30rem;
+    width: 20rem;
+    border-radius: .5rem;
+    border: 2px solid lightgrey;
+    background-color: white;
+    #content{
+      height: 28rem;
+      overflow: scroll;
+    }
+    #input{
+      display: flex;
+      justify-content: center;
+      i{
+        margin: .1rem 0 .1rem .3rem;
+      }
+    }
+  }
+  #bubble-chat{
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+    margin: 0 0 0 auto;
+    background-color: #8154A8;
+    i {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      transform: translate(40%, -50%);
+    }
+  }
+}

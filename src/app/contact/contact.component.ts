@@ -1,10 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Chip} from "primeng/chip";
-
-// interface bizarre {
-//   designation: string;
-//   person: string[];
-// }
 
 @Component({
   selector: 'app-contact',
