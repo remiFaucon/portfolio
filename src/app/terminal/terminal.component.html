@@ -6,6 +6,6 @@
     <div></div>
   </div>
   <div class="terminal">
-    <div *ngFor="let item of terminalContent | keyvalue;" ngModel="item.value" [innerHTML]="item.value"></div>
+    <div *ngFor="let item of terminalContent | keyvalue;" [innerHTML]="item.value"></div>
   </div>
 </div>

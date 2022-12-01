@@ -1,15 +1,9 @@
 import {
-  ApplicationRef,
-  Component, ComponentFactory,
-  ComponentFactoryResolver,
-  Injector,
+  Component, HostListener,
   OnInit,
-  ViewContainerRef,
   ViewEncapsulation
 } from '@angular/core';
 import {Router} from '@angular/router'
-import {isEmpty, throwIfEmpty} from "rxjs";
-import {element} from "three/examples/jsm/nodes/shadernode/ShaderNodeBaseElements";
 
 export interface character {
   val: string
@@ -24,62 +18,27 @@ export interface character {
 })
 export class TerminalComponent implements OnInit {
   terminalContent = new Map()
-  constructor(private router: Router) {}
-  ngOnInit(): void {
-    (async () => {
-      await this.showTerminalContent()
-        setTimeout(() =>{
-          let input = document.querySelector("app-terminal .terminal div:last-of-type p span:last-of-type")!;
-          let toggle = true
-          setInterval(() => {
-            if (toggle)
-              input.classList.toggle("hiddenInput");
-            else{
-              input.classList.add("hiddenInput");
-              return
-            }
-          }, 750)
-          document.addEventListener("keydown", async (e) => {
-            e.preventDefault()
-            if (action(e.key) === "inner") {
-              input.innerHTML = input.innerHTML + e.key
-            } else if (action(e.key) === "outer") {
-              input.innerHTML = input.innerHTML.slice(0, -1)
-            } else if (action(e.key) === "enter") {
-              toggle = false
-              switch (input.innerHTML){
-                case "home":
-                  await this.router.navigate(["/"])
-                  break
-                case "service":
-                  await this.router.navigate(["/services"])
-                  break
-                case "project":
-                  await this.router.navigate(["/realisation"])
-                  break
-                case "about":
-                  await this.router.navigate(["/a-propos"])
-                  break
-                case "sudo rm -rf /":
-                  await this.deletePage()
-                  await this.router.navigate(["/contact"])
-                  break
-              }
-            }
-          })
-        }, 1)
-    }) ()
+  private input: Element | undefined;
+  private toggle = true
 
-    function action(key: string): string|void {
-      let letter = [
-        "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
-        "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
-        "u", "v", "w", "x", "y", "z", "-", "/", " "
-      ]
-      if(letter.includes(key)) return "inner"
-      else if (key === "Backspace") return "outer"
-      else if (key === "Enter") return "enter"
-    }
+  constructor(private router: Router) {
+    console.log(this)
+  }
+
+  ngOnInit(): void {
+    this.showTerminalContent().then(() => {
+      setInterval(() => {
+        if (!this.input){
+          this.input = document.querySelector(".terminal div:last-of-type p span:last-of-type")!;
+        }
+        if (this.toggle)
+          this.input!.classList.toggle("hiddenInput");
+        else{
+          this.input!.classList.add("hiddenInput");
+          return
+        }
+      }, 750)
+    })
   }
 
   private async addLine(text: string, line: number, writeSpeed:number = 0, writeAtEnd:number = 0, timeOut = 0): Promise<void>{
@@ -144,6 +103,51 @@ export class TerminalComponent implements OnInit {
     return
   }
 
+ @HostListener('window:keydown', ['$event'])
+ private async onKeyDown ($e: KeyboardEvent) {
+   $e.preventDefault()
+   this.input = document.querySelector(".terminal div:last-of-type p span:last-of-type")!
+   const result = action($e.key)
+   if (result === "inner") {
+     this.input!.innerHTML = this.input!.innerHTML + $e.key
+   }
+   else if (result === "outer") {
+     this.input!.innerHTML = this.input!.innerHTML.slice(0, -1)
+   }
+   else if (result === "enter") {
+     this.toggle = false
+     switch (this.input!.innerHTML) {
+       case "home":
+         await this.router.navigate(["/"])
+         break
+       case "service":
+         await this.router.navigate(["/services"])
+         break
+       case "project":
+         await this.router.navigate(["/realisation"])
+         break
+       case "about":
+         await this.router.navigate(["/a-propos"])
+         break
+       case "sudo rm -rf /":
+         await this.deletePage()
+         await this.router.navigate(["/contact"])
+         break
+     }
+   }
+
+   function action(key: string): string | void {
+     let letter = [
+       "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+       "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
+       "u", "v", "w", "x", "y", "z", "-", "/", " "
+     ]
+     if (letter.includes(key)) return "inner"
+     else if (key === "Backspace") return "outer"
+     else if (key === "Enter") return "enter"
+   }
+
+ }
   private async deletePage(): Promise<void> {
     const promise = new Promise<void>(async (resolve, reject) => {
       let elements = Array.from(document.querySelectorAll("p, h1, h2, a"))
