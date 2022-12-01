@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { realisation } from '../realisations/realisations.component';
+import { realisation } from '../../pages/realisations/realisations.component';
 
 @Component({
   selector: 'app-realisation',

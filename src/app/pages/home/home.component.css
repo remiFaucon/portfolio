@@ -15,19 +15,23 @@
       font-size: 60px;
       font-weight: bold;
       line-height: 4rem;
-      letter-spacing: 3px; }
+      letter-spacing: 3px;
+      margin-top: 0; }
       .page .textContent h1 span {
         font-size: 42px;
         display: block; }
     .page .textContent p {
       font-size: 20px;
       letter-spacing: 1px; }
+  .page app-terminal {
+    display: flex;
+    margin: auto; }
 
 @media (max-width: 1150px) {
   .page {
     flex-direction: column;
     left: 50%;
-    top: 6rem;
+    top: 10rem;
     transform: translateX(-50%); }
     .page .textContent {
       width: 75vw;

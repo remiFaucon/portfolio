@@ -21,9 +21,7 @@ export class TerminalComponent implements OnInit {
   private input: Element | undefined;
   private toggle = true
 
-  constructor(private router: Router) {
-    console.log(this)
-  }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.showTerminalContent().then(() => {
@@ -31,11 +29,13 @@ export class TerminalComponent implements OnInit {
         if (!this.input){
           this.input = document.querySelector(".terminal div:last-of-type p span:last-of-type")!;
         }
-        if (this.toggle)
-          this.input!.classList.toggle("hiddenInput");
-        else{
-          this.input!.classList.add("hiddenInput");
-          return
+        else {
+          if (this.toggle)
+            this.input!.classList.toggle("hiddenInput");
+          else{
+            this.input!.classList.add("hiddenInput");
+            return
+          }
         }
       }, 750)
     })

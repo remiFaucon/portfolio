@@ -10,7 +10,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {ChipModule} from "primeng/chip";
 import {PanelMenuModule} from "primeng/panelmenu";
 import {InputMaskModule} from "primeng/inputmask";
-import {ChatComponent} from "../chat/chat.component";
+import {ChatComponent} from "../../components/chat/chat.component";
 import {MessageModule} from "primeng/message";
 import {ButtonModule} from "primeng/button";
 import {RippleModule} from "primeng/ripple";

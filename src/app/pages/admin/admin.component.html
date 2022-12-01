@@ -1,5 +1,5 @@
 <p-accordion>
-  <p-accordionTab *ngFor="let user of users" header="{{user.name}}" (click)="setThisUser(user.name)">
+  <p-accordionTab *ngFor="let user of users" header="{{user.name}}" >
     <div id="chat">
       <div id="content">
         <div *ngFor="let message of user.messages">
@@ -9,7 +9,7 @@
       <div class="col-12 md:col-4" id="input">
         <div class="p-inputgroup">
           <input type="text" pInputText placeholder="Keyword" [(ngModel)]="messageInput">
-          <button type="button" pButton pRipple icon="pi pi-arrow-circle-right" styleClass="p-button-warn" (submit)="send()"></button>
+          <button type="button" pButton pRipple icon="pi pi-arrow-circle-right" styleClass="p-button-warn" (click)="send(user.name)"></button>
         </div>
       </div>
     </div>

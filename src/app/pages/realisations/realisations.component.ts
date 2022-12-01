@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {RealisationComponent} from '../realisation/realisation.component'
+import {RealisationComponent} from '../../components/realisation/realisation.component'
 import {MenuItem} from "primeng/api";
 
 export type realisation = {
