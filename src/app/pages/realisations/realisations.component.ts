@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {RealisationComponent} from '../../components/realisation/realisation.component'
 import {MenuItem} from "primeng/api";
+import {SeoService} from "../../services/SEO/seo.service";
 
 export type realisation = {
   id: number;
@@ -104,9 +105,14 @@ export class RealisationsComponent implements OnInit {
   ];
   terminal: boolean = false;
 
-  constructor() { }
+  constructor(private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.addTags(
+      "Rémi Faucon - développeur junior",
+      "voici quelques'une de mes realisations"
+    )
+
     this.realisations.forEach((realisation) => {
       this.dockItems = [
         ...this.dockItems,

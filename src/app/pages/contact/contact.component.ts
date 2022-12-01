@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Chip} from "primeng/chip";
+import {SeoService} from "../../services/SEO/seo.service";
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   emailError: boolean = false;
 
   emailAddress: string = "";
@@ -19,7 +20,14 @@ export class ContactComponent {
   ];
   phoneNumber: string = "";
 
-  constructor() { }
+  constructor(private seo: SeoService) { }
+
+  ngOnInit(): void {
+    this.seo.addTags(
+      "Rémi Faucon - développeur junior",
+      "contacter moi directement sur cette plateforme ou par mail"
+    )
+  }
 
   validate(input: HTMLInputElement) {
     if(this.emailAddress.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {

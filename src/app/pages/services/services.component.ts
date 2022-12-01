@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SeoService} from "../../services/SEO/seo.service";
 
 @Component({
   selector: 'app-services',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.addTags(
+      "Rémi Faucon - développeur junior",
+      "je présente ici les service que je propose"
+    )
   }
 
 }
