@@ -4,6 +4,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {Router} from '@angular/router'
+import { getDocument, getWindow } from 'ssr-window';
 
 export interface character {
   val: string
@@ -20,14 +21,16 @@ export class TerminalComponent implements OnInit {
   terminalContent = new Map()
   private input: Element | undefined;
   private toggle = true
+  private document: Document | undefined;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    this.document = getDocument()
     this.showTerminalContent().then(() => {
       setInterval(() => {
         if (!this.input){
-          this.input = document.querySelector(".terminal div:last-of-type p span:last-of-type")!;
+          this.input = this.document!.querySelector(".terminal div:last-of-type p span:last-of-type")!;
         }
         else {
           if (this.toggle)
@@ -106,7 +109,7 @@ export class TerminalComponent implements OnInit {
  @HostListener('window:keydown', ['$event'])
  private async onKeyDown ($e: KeyboardEvent) {
    $e.preventDefault()
-   this.input = document.querySelector(".terminal div:last-of-type p span:last-of-type")!
+   this.input = this.document!.querySelector(".terminal div:last-of-type p span:last-of-type")!
    const result = action($e.key)
    if (result === "inner") {
      this.input!.innerHTML = this.input!.innerHTML + $e.key
@@ -150,7 +153,7 @@ export class TerminalComponent implements OnInit {
  }
   private async deletePage(): Promise<void> {
     const promise = new Promise<void>(async (resolve, reject) => {
-      let elements = Array.from(document.querySelectorAll("p, h1, h2, a"))
+      let elements = Array.from(this.document!.querySelectorAll("p, h1, h2, a"))
       let currentIndex = elements.length
       while (currentIndex != 0) {
         let randomIndex = Math.floor(Math.random() * currentIndex);
