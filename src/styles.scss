@@ -2,15 +2,16 @@
 @font-face {
   font-family: "Montserrat";
   font-weight: bold;
-  src: url("./assets/font/Montserrat-ExtraBold.ttf") format("ttf");
+  src: local("Montserrat"), url("./assets/font/Montserrat-ExtraBold.ttf") format("ttf");
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("./assets/font/Montserrat-Bold.ttf") format("ttf");
+  src: local("Montserrat"), url("./assets/font/Montserrat-Bold.ttf") format("ttf");
 }
 body{
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
   app-root{
     max-width: 1440px;
     margin: 0 auto;

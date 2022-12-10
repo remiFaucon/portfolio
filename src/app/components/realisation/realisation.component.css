@@ -1,8 +1,10 @@
 :host {
   position: absolute;
   display: block;
-  height: 30rem;
-  width: 40rem; }
+  height: 29.6rem;
+  width: 40rem;
+  border-radius: .4rem;
+  border: 1px solid grey; }
   :host .realisationHeader {
     display: flex;
     justify-content: space-between;

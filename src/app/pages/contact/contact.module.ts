@@ -14,6 +14,7 @@ import {ChatComponent} from "../../components/chat/chat.component";
 import {MessageModule} from "primeng/message";
 import {ButtonModule} from "primeng/button";
 import {RippleModule} from "primeng/ripple";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {RippleModule} from "primeng/ripple";
     InputMaskModule,
     MessageModule,
     ButtonModule,
-    RippleModule
+    RippleModule,
+    HttpClientModule
   ]
 })
 export class ContactModule { }

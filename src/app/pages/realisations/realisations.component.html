@@ -7,9 +7,9 @@
     </app-realisation>
   </div>
   <div id="details">
-    <h2></h2>
-    <p></p>
-    <p></p>
+    <h2>{{real.title}}</h2>
+    <p>{{dateFormat(real.date)}}</p>
+    <div [innerHtml]="real.description"></div>
   </div>
   <app-terminal *ngIf="terminal"></app-terminal>
   <p-dock [model]="dockItems" position="bottom">

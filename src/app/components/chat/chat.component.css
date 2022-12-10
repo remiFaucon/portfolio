@@ -1,29 +1,67 @@
-:host {
+app-chat {
   position: absolute;
   bottom: 10rem;
   right: 5rem; }
-  :host #chat {
+  app-chat #chat {
     height: 30rem;
     width: 20rem;
     border-radius: .5rem;
     border: 2px solid lightgrey;
     background-color: white; }
-    :host #chat #content {
-      height: 28rem;
-      overflow: scroll; }
-    :host #chat #input {
+    app-chat #chat #content {
+      height: 26.5rem;
+      overflow-y: scroll; }
+      app-chat #chat #content::-webkit-scrollbar {
+        border-radius: .25rem;
+        width: .5rem; }
+      app-chat #chat #content::-webkit-scrollbar-track {
+        background: #f1f1f1; }
+      app-chat #chat #content::-webkit-scrollbar-thumb {
+        background: #888; }
+        app-chat #chat #content::-webkit-scrollbar-thumb:hover {
+          background: #555; }
+      app-chat #chat #content p-message {
+        display: block; }
+        app-chat #chat #content p-message div:first-child {
+          display: block;
+          width: fit-content;
+          margin: .5rem auto 0 auto; }
+      app-chat #chat #content .receive {
+        display: flex;
+        justify-content: left;
+        margin: .5rem .25rem; }
+        app-chat #chat #content .receive p {
+          margin: 0;
+          color: white;
+          background-color: #8154A8;
+          border-radius: 1rem 1rem 1rem 0;
+          width: fit-content;
+          max-width: 90%;
+          padding: .5rem; }
+      app-chat #chat #content .send {
+        display: flex;
+        justify-content: right;
+        margin: .5rem .25rem; }
+        app-chat #chat #content .send p {
+          color: #8154A8;
+          border: #8154A8 solid 2px;
+          border-radius: 1rem 1rem 0 1rem;
+          width: fit-content;
+          max-width: 90%;
+          padding: .5rem; }
+    app-chat #chat #input {
       display: flex;
       justify-content: center; }
-      :host #chat #input i {
+      app-chat #chat #input i {
         margin: .1rem 0 .1rem .3rem; }
-  :host #bubble-chat {
+  app-chat #bubble-chat {
     position: relative;
     width: 4rem;
     height: 4rem;
     border-radius: 2rem;
     margin: 0 0 0 auto;
     background-color: #8154A8; }
-    :host #bubble-chat i {
+    app-chat #bubble-chat i {
       position: absolute;
       top: 2rem;
       right: 2rem;

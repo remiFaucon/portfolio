@@ -3,7 +3,7 @@ import {RealisationComponent} from '../../components/realisation/realisation.com
 import {MenuItem} from "primeng/api";
 import {SeoService} from "../../services/SEO/seo.service";
 
-export type realisation = {
+export type Realisation = {
   id: number;
   title: string;
   image: string;
@@ -18,7 +18,7 @@ export type realisation = {
   styleUrls: ['./realisations.component.scss'],
 })
 export class RealisationsComponent implements OnInit {
-  realisations: realisation[] = [
+  realisations: Realisation[] = [
     {
       id: 0,
       title: "panda",
@@ -37,10 +37,11 @@ export class RealisationsComponent implements OnInit {
     },
     {
       id: 2,
-      title: "title",
-      date: new Date("01-01-2001"),
-      description: "lorem ipsum",
-      image: "/assets/apart.jpeg",
+      title: "le chat",
+      date: new Date("06-01-2022"),
+      description: "<p>plateforme de communication en direct via websocket basé sur le framework expressJs.</p>" +
+        "<p>ce projet a ete developer dans le but de me familliariser avec ce frameork ainsi que  la notion de websocket.</p>",
+      image: "/assets/images/lechat.png",
       link: "google.com"
     }
   ]
@@ -104,6 +105,8 @@ export class RealisationsComponent implements OnInit {
 
   ];
   terminal: boolean = false;
+  real: Realisation = this.realisations[this.realisations.length-1];
+
 
   constructor(private seo: SeoService) { }
 
@@ -131,38 +134,26 @@ export class RealisationsComponent implements OnInit {
     })
   }
   ngAfterViewInit(): void {
-    const detailsTitle = document.querySelector('#details h2')!
-    const detailsDate = document.querySelector('#details p')!
-    const details = document.querySelector('#details p:last-of-type')!
-
-    detailsTitle.innerHTML = this.realisations[this.realisations.length-1].title
-    detailsDate.innerHTML = RealisationComponent.dateFormat(this.realisations[this.realisations.length-1].date)
-    details.innerHTML = this.realisations[this.realisations.length-1].description
-
-    this.clickOnApp(document.querySelectorAll("app-realisation"))
+    this.clickOnApp(document.querySelectorAll("app-Realisation"))
     this.clickOnApp(document.querySelectorAll(".p-dock-item:not(.p-dock-item:first-of-type) img"), true)
   }
 
   clickOnApp = (realisations: NodeListOf<Element>, appBar?: boolean) => {
-    const detailsTitle = document.querySelector('#details h2')!
-    const detailsDate = document.querySelector('#details p')!
-    const details = document.querySelector('#details p:last-of-type')!
-
     realisations.forEach(realisation => {
       realisation.addEventListener("click", () => {
         const id = realisation.getAttribute("data-id")!
-        console.log(id)
-        const realObj = this.realisations[+id]
-        detailsTitle.innerHTML = realObj.title
-        detailsDate.innerHTML = RealisationComponent.dateFormat(realObj.date)
-        details.innerHTML = realObj.description
+        this.real = this.realisations[this.realisations.findIndex(realisation => realisation.id === Number.parseInt(id))];
         if (appBar) {
-          realisation = document.querySelector("app-realisation[data-id='" + id + "']")!
-          console.log(realisation)
+          realisation = document.querySelector("app-Realisation[data-id='" + id + "']")!
         }
         realisation.parentNode!.appendChild(realisation)
       })
     })
   }
 
+  dateFormat(date: Date): string {
+    const day = date.getDay() < 10 ? "0" + date.getDate() : date.getDate()
+    const month = date.getMonth() < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1
+    return day + "/" + month + "/" + date.getFullYear()
+  }
 }

@@ -1,14 +1,45 @@
 :host{
-  ::ng-deep .p-chip.custom-chip {
-    background: var(--primary-color);
-    color: var(--primary-color-text);
-  }
-  .field{
-    small{
-      display: block;
-    }
-    ::ng-deep .p-inputtext{
-      padding: 1rem 3rem;
+  .page {
+    display: flex;
+    height: 75vh;
+    .mail {
+      margin: auto;
+      ::ng-deep .p-chip.custom-chip {
+        background: var(--primary-color);
+        color: var(--primary-color-text);
+      }
+
+      .field {
+        display: flex;
+        justify-content: space-between;
+        small {
+          display: block;
+        }
+
+        ::ng-deep .p-inputtext {
+          padding: 1rem 3rem;
+          width: 20vw;
+        }
+
+        span {
+          input {
+            width: 28vw;
+          }
+        }
+      }
+
+      .object {
+        p-chip {
+          margin: .5rem;
+          display: inline-block;
+        }
+      }
+
+      p-editor {
+        width: 50vw;
+        max-width: 100rem;
+        display: block;
+      }
     }
   }
 }

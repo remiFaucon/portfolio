@@ -1,4 +1,4 @@
-:host {
+app-chat {
   position: absolute;
   bottom: 10rem;
   right: 5rem;
@@ -9,8 +9,58 @@
     border: 2px solid lightgrey;
     background-color: white;
     #content{
-      height: 28rem;
-      overflow: scroll;
+      height: 26.5rem;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        border-radius: .25rem;
+        width: .5rem;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+        &:hover {
+          background: #555;
+        }
+      }
+      p-message{
+        display: block;
+        div{
+          &:first-child {
+            display: block;
+            width: fit-content;
+            margin: .5rem auto 0 auto;
+          }
+        }
+      }
+      .receive{
+        display: flex;
+        justify-content: left;
+        margin: .5rem .25rem;
+        p{
+          margin: 0;
+          color: white;
+          background-color: #8154A8;
+          border-radius: 1rem 1rem 1rem 0;
+          width: fit-content;
+          max-width: 90%;
+          padding: .5rem;
+        }
+      }
+      .send{
+        display: flex;
+        justify-content: right;
+        margin: .5rem .25rem;
+        p{
+          color: #8154A8;
+          border: #8154A8 solid 2px;
+          border-radius: 1rem 1rem 0 1rem;
+          width: fit-content;
+          max-width: 90%;
+          padding: .5rem;
+        }
+      }
     }
     #input{
       display: flex;

@@ -1,8 +1,8 @@
 <div *ngIf="hidden" id="chat">
   <div id="content">
-    <div *ngFor="let message of messages">
-      <p-message *ngIf="message.severity" severity="{{message.severity}}" text="{{message.text}}"></p-message>
-      <p *ngIf="!message.severity" class="{{message.class}}">{{message.text}}</p>
+    <div *ngFor="let message of messages" class="{{message.class}}">
+      <p-message class="connection-message" *ngIf="message.severity" severity="{{message.severity}}" text="{{message.text}}"></p-message>
+      <p *ngIf="!message.severity">{{message.text}}</p>
     </div>
   </div>
   <div class="col-12 md:col-4" id="input">

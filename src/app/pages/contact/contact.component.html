@@ -1,54 +1,56 @@
 <app-header></app-header>
-
-<!--<p-panelMenu [model]="menuBizarre" [style]="{'width':'300px'}"></p-panelMenu>-->
-
-<div class="field">
-  <span class="p-input-icon-left">
-    <i class="pi pi-envelope"></i>
-    <input #inputEmail
-           type="email"
-           id="inputtext"
-           pInputText
-           class="ng-dirty"
-           placeholder="adresse mail"
-           [(ngModel)]="emailAddress"
-           (focusout)="validate(inputEmail)">
-  </span>
-  <small *ngIf="emailError" class="p-error block">email is not available.</small>
-</div>
-<div class="field">
-  <span class="p-input-icon-left">
-    <i class="pi pi-phone"></i>
-    <p-inputMask mask="09-99-99-99-99"
-                 placeholder="telephone (facultatif)"
-                 [(ngModel)]="phoneNumber">
-    </p-inputMask>
-  </span>
-</div>
-<div class="object">
-  <p-chip #object
-          *ngFor="let obj of objectList"
-          label="{{obj}}"
-          (click)="selectObject(object)">
-  </p-chip>
-</div>
-<p-editor [(ngModel)]="emailBody" [style]="{'height':'320px'}">
-  <ng-template pTemplate="header">
-      <span class="ql-format-group">
-        <span title="Bold">
-          <button class="ql-bold"></button>
+<div class="page">
+  <div class="mail">
+    <div class="field">
+      <div>
+        <span class="p-input-icon-left">
+          <i class="pi pi-envelope"></i>
+          <input #inputEmail
+                 type="email"
+                 id="inputtext"
+                 pInputText
+                 class="ng-dirty"
+                 placeholder="adresse mail"
+                 [(ngModel)]="emailAddress"
+                 (focusout)="validate(inputEmail)">
         </span>
-        <span title="Italic">
-          <button class="ql-italic"></button>
-        </span>
-        <span title="Underline">
-          <button class="ql-underline"></button>
-        </span>
-        <span title="Strikethrough">
-          <button class="ql-strike"></button>
-        </span>
+        <small *ngIf="emailError" class="p-error block">email is not available.</small>
+      </div>
+      <span class="p-input-icon-left">
+        <i class="pi pi-phone"></i>
+        <p-inputMask mask="09-99-99-99-99"
+                     placeholder="telephone (facultatif)"
+                     [(ngModel)]="phoneNumber">
+        </p-inputMask>
       </span>
-  </ng-template>
-</p-editor>
-<app-chat></app-chat>
+    </div>
+    <div class="object">
+      <p-chip #object
+              *ngFor="let obj of objectList"
+              label="{{obj}}"
+              (click)="selectObject(object)">
+      </p-chip>
+    </div>
+    <p-editor [(ngModel)]="emailBody" [style]="{'height':'320px'}">
+      <ng-template pTemplate="header">
+        <span class="ql-format-group">
+          <span title="Bold">
+            <button class="ql-bold"></button>
+          </span>
+          <span title="Italic">
+            <button class="ql-italic"></button>
+          </span>
+          <span title="Underline">
+            <button class="ql-underline"></button>
+          </span>
+          <span title="Strikethrough">
+            <button class="ql-strike"></button>
+          </span>
+        </span>
+      </ng-template>
+    </p-editor>
+    <p id="submit" (click)="submit()">envoyer</p>
+  </div>
+  <app-chat></app-chat>
+</div>
 <app-footer></app-footer>

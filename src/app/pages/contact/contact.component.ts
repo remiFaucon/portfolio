@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Chip} from "primeng/chip";
 import {SeoService} from "../../services/SEO/seo.service";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +10,6 @@ import {SeoService} from "../../services/SEO/seo.service";
 })
 export class ContactComponent implements OnInit {
   emailError: boolean = false;
-
   emailAddress: string = "";
   emailObject: string = "";
   emailBody: string = "";
@@ -20,7 +20,7 @@ export class ContactComponent implements OnInit {
   ];
   phoneNumber: string = "";
 
-  constructor(private seo: SeoService) { }
+  constructor(private seo: SeoService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.seo.addTags(
@@ -44,5 +44,16 @@ export class ContactComponent implements OnInit {
     document.querySelector("p-chip .custom-chip")?.classList.remove("custom-chip")
     object.styleClass = "mr-2 custom-chip"
     this.emailObject = object.label
+  }
+
+  submit() {
+    this.http.post("http://localhost:3000/mail", {
+      email: this.emailAddress,
+      phoneNumber: this.phoneNumber,
+      object: this.emailObject,
+      emailBody: this.emailBody
+    }).subscribe(data => {
+      console.log(data);
+    })
   }
 }
